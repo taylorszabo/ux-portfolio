@@ -1,4 +1,3 @@
-// Pages/Home.tsx
 import AppLayout from '@/Layouts/AppLayout';
 import Hero from '@/Components/Hero';
 import ProjectCard, { Project } from '@/Components/ProjectCard';

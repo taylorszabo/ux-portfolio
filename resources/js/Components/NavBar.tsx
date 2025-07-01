@@ -1,19 +1,21 @@
-import {Link, usePage} from "@inertiajs/react";
 
+import {Link, usePage} from "@inertiajs/react";
 
 export default function NavBar() {
     const { url } = usePage();
+    const pathname = url.split('?')[0];
 
-    const link = (href: string, label: string) => (
-        <Link
-            href={href}
-            className={`px-3 py-2 font-medium hover:text-brand-accent ${
-                url.startsWith(href) ? 'text-brand-accent' : ''
-            }`}
-        >
-            {label}
-        </Link>
-    );
+    const isActive = (href: string) =>
+        href === '/'
+            ? pathname === '/'
+            : pathname.startsWith(href);
+
+    const links = [
+        { href: '/',        label: 'Home'   },
+        { href: '/work',    label: 'Work'   },
+        { href: '/about',   label: 'About'  },
+        { href: '/contact', label: 'Contact'},
+    ];
 
     return (
         <header className="sticky top-0 z-50 backdrop-blur border-b border-white/10">
@@ -23,10 +25,18 @@ export default function NavBar() {
                 </Link>
 
                 <div className="space-x-4">
-                    {link('/', 'Home')}
-                    {link('/work', 'Work')}
-                    {link('/about', 'About')}
-                    {link('/contact', 'Contact')}
+                    {links.map(({ href, label }) => (
+                        <Link
+                            key={href}
+                            href={href}
+                            className={`px-3 py-2 font-medium transition
+                 hover:text-brand-accent ${
+                                isActive(href) ? 'text-brand-accent' : ''
+                            }`}
+                        >
+                            {label}
+                        </Link>
+                    ))}
                 </div>
             </nav>
         </header>

@@ -1,5 +1,3 @@
-// Components/ProjectCard.tsx
-
 import {Link} from "@inertiajs/react";
 
 export interface Project {

@@ -1,4 +1,3 @@
-// Pages/Work/Show.tsx
 import AppLayout from '@/Layouts/AppLayout';
 import { Project } from '@/Components/ProjectCard';
 import { marked } from 'marked';

@@ -1,13 +1,11 @@
-// Pages/Work/Index.tsx
 import AppLayout from '@/Layouts/AppLayout';
 import ProjectCard, { Project } from '@/Components/ProjectCard';
 import Pagination, { LinkObject } from '@/Components/Pagination';
-// write yours or use Breeze’s
 
 interface Props {
     projects: {
         data: Project[];
-        links: LinkObject[];   // Laravel paginator JSON
+        links: LinkObject[];
     };
 }
 

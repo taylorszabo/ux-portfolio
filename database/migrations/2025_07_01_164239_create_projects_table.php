@@ -11,7 +11,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('except', 280);
+            $table->string('excerpt', 280);
             $table->json('tags')->nullable();
             $table->string('cover_image');
             $table->text('body');

@@ -1,4 +1,3 @@
-// Pages/About.tsx
 import AppLayout from '@/Layouts/AppLayout';
 
 export default function About() {

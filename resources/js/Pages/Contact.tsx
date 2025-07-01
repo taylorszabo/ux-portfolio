@@ -1,4 +1,3 @@
-// Pages/Contact.tsx
 import AppLayout from '@/Layouts/AppLayout';
 import {useForm} from "@inertiajs/react";
 
@@ -12,7 +11,7 @@ export default function Contact() {
 
     function submit(e: React.FormEvent) {
         e.preventDefault();
-        post(route('contact.send'));   // create this endpoint if needed
+        post(route('contact.send'));
     }
 
     return (

@@ -1,4 +1,3 @@
-// Components/Hero.tsx
 import { motion } from 'framer-motion';
 import {Link} from "@inertiajs/react";
 
