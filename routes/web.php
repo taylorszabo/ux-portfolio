@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -23,5 +25,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/',               [HomeController::class, 'index'])->name('home');
+Route::get('/work',           [ProjectController::class, 'index'])->name('work.index');
+Route::get('/work/{project}', action: [ProjectController::class, 'show' ])->name('work.show');
+Route::inertia('/about',  'About')->name('about');
+Route::inertia('/contact','Contact')->name('contact');
 
 require __DIR__.'/auth.php';
